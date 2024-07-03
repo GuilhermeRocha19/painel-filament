@@ -24,6 +24,7 @@ class UserResource extends Resource
 
     public static function form(Form $form): Form
     {
+
         return $form
             ->schema([
                 TextInput::make('name')
@@ -34,7 +35,7 @@ class UserResource extends Resource
                 TextInput::make('password')
                     ->password()
                     ->required()
-                    ->hiddenOn('edit')
+                    ->hiddenOn('edit')   
             ]);
     }
 
@@ -42,8 +43,10 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                ->searchable(),
                 TextColumn::make('email')
+                ->searchable()
             ])
             ->filters([
                 //
