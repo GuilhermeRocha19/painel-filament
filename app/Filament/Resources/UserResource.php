@@ -49,7 +49,7 @@ class UserResource extends Resource
                 ->searchable()
             ])
             ->filters([
-                //
+                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
