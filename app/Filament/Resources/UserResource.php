@@ -31,11 +31,13 @@ class UserResource extends Resource
                     ->required(),
                 TextInput::make('email')
                     ->required()
-                    ->unique(),
+                    ->unique(ignoreRecord: true),
+                TextInput::make('group'),
                 TextInput::make('password')
                     ->password()
-                    ->required()
-                    ->hiddenOn('edit')   
+                    ->revealable()
+                    ->required(fn ($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord)
+                    
             ]);
     }
 
@@ -44,12 +46,12 @@ class UserResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('email')
-                ->searchable()
+                    ->searchable()
             ])
             ->filters([
-                 //
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
