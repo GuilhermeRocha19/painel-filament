@@ -31,4 +31,18 @@ class CreateUserRequest extends FormRequest
             'password' => 'required|string|max:30|confirmed',
         ];
     }
+
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório.',
+            'email.required' => 'O campo email é obrigatório.',
+            'email.email' => 'O campo email deve ser um endereço de email válido.',
+            'email.unique' => 'O email informado já está em uso.',
+            'password.required' => 'O campo senha é obrigatório.',
+            'password.confirmed' => 'A confirmação da senha não corresponde.',
+            'password.max' => 'A senha deve ter no máximo :max caracteres.',
+        ];
+    }
 }
