@@ -7,29 +7,27 @@ use App\Http\Requests\CreateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class ApiController extends Controller
-{ 
-    public function show($id){
+{
+    public function show($id)
+    {
         $user = User::find($id);
 
-        if(!$user){
-            return ApiResponse::formatJson(404,'erro');
-        }else{
-            return ApiResponse::formatJson(200,'Sucesso',$user);
+        if (!$user) {
+            return ApiResponse::formatJson(404, 'erro');
+            
+        } else {
+            return ApiResponse::formatJson(200, 'Sucesso', $user);
         }
     }
 
     public function store(CreateUserRequest $request)
     {
-        
         $data = $request->validated();
-    
-        
         $user = User::create($data);
-    
-        return ApiResponse::formatJson('success', 'User created successfully', $user);
+
+        return ApiResponse::formatJson(200, 'Sucesso', $user);
     }
-
-
 }
