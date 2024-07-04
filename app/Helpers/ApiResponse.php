@@ -12,7 +12,6 @@ class ApiResponse
             'message' => $message,
             'data' => $data,
         ], $status);
-        // $url = "https://http.cat/$status"; 
-        //     return Redirect::away($url);
+
     }
 }

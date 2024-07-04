@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68c4c64a84d87d601f08a162e8e878ac",
+    "content-hash": "ecb4a1d4fe3223c58923375cd395da61",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8383,16 +8383,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "11.0.4",
+            "version": "11.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "4dc2b7a606073f0fb80da09842ffb068b627c38f"
+                "reference": "19b6365ab8b59a64438c0c3f4241feeb480c9861"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4dc2b7a606073f0fb80da09842ffb068b627c38f",
-                "reference": "4dc2b7a606073f0fb80da09842ffb068b627c38f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/19b6365ab8b59a64438c0c3f4241feeb480c9861",
+                "reference": "19b6365ab8b59a64438c0c3f4241feeb480c9861",
                 "shasum": ""
             },
             "require": {
@@ -8449,7 +8449,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.4"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.5"
             },
             "funding": [
                 {
@@ -8457,7 +8457,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-29T08:26:25+00:00"
+            "time": "2024-07-03T05:05:37+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
