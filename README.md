@@ -67,9 +67,9 @@ Acesse a aplicação em http://localhost:8000.
 
 ## API
 
-GET /api/user/index
-GET /api/user/{id}/show
-POST /api/user/store
+- `GET /api/user/index`
+- `GET /api/user/{id}/show`
+- `POST /api/user/store`
 
 ## Testes
 Para executar os testes unitários:
