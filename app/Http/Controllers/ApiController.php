@@ -12,6 +12,17 @@ use Illuminate\Support\Facades\Log;
 
 class ApiController extends Controller
 {
+    public function index(){
+        $user = User::all();
+
+        if (!$user) {
+            return ApiResponse::formatJson(404, 'erro');
+            
+        } else {
+            return ApiResponse::formatJson(200, 'Sucesso', $user);
+        }
+    }
+
     public function show($id)
     {
         $user = User::find($id);
