@@ -1,17 +1,14 @@
 <?php
- 
-namespace App\Helpers;
+use Illuminate\Http\Response;
 
-use Illuminate\Support\Facades\Redirect;
+if (!function_exists('formatJson')) {
 
-class ApiResponse
-{
-    public static function formatJson($status, $message, $data = null){
+    function formatJson(mixed $data = null, ?string $message = null, int $status = 200)
+    {
         return response()->json([
             'status' => $status,
             'message' => $message,
             'data' => $data,
         ], $status);
-
     }
 }

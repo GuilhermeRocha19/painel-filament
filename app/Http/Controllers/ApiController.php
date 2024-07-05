@@ -16,10 +16,10 @@ class ApiController extends Controller
         $user = User::all();
 
         if (!$user) {
-            return ApiResponse::formatJson(404, 'erro');
+            return formatJson(status: 404, message:'erro');
             
         } else {
-            return ApiResponse::formatJson(200, 'Sucesso', $user);
+            return formatJson(status: 200, message: 'Sucesso', data: $user);
         }
     }
 
@@ -28,10 +28,10 @@ class ApiController extends Controller
         $user = User::find($id);
 
         if (!$user) {
-            return ApiResponse::formatJson(404, 'erro');
+            return formatJson(status: 404, message: 'erro');
             
         } else {
-            return ApiResponse::formatJson(200, 'Sucesso', $user);
+            return formatJson(status: 200, message: 'Sucesso', data: $user);
         }
     }
 
@@ -42,6 +42,6 @@ class ApiController extends Controller
         $data = $request->validated();
         $user = User::create($data);
 
-        return ApiResponse::formatJson(201, 'Sucesso', $user);
+        return formatJson(status: 201, message: 'Sucesso', data: $user);
     }
 }
