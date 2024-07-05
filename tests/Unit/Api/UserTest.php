@@ -24,10 +24,11 @@ class UserTest extends TestCase
         ]);
 
         $data = $response->json('data');
+
         // Garante que é uma matriz
         $this->assertIsArray($data);
         // Garante que é verdadeiro quando existir apenas 2 registros
-        $this->assertTrue(count($data) >= 2);
+        $this->assertTrue(count($data) === 1);
 
         foreach ($data as $datum) {
             $this->assertIsString($datum['name']);
@@ -38,8 +39,10 @@ class UserTest extends TestCase
 
     public function test_procura_usuario_por_id(): void
     {
+
+
         // colocar um ID de um usuário válido no database
-        $id = 1;
+        $id = 2;
         $endpoint = sprintf('/api/user/%s/show', $id);
 
         $response = $this->get($endpoint);
