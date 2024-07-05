@@ -28,7 +28,7 @@ class UserTest extends TestCase
         // Garante que é uma matriz
         $this->assertIsArray($data);
         // Garante que é verdadeiro quando existir apenas 2 registros
-        $this->assertTrue(count($data) === 1);
+        $this->assertTrue(count($data) === 1); 
 
         foreach ($data as $datum) {
             $this->assertIsString($datum['name']);

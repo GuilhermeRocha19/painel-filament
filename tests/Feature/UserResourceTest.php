@@ -25,7 +25,8 @@ class UserResourceTest extends TestCase
         User::factory()->count(3)->create();
         $users = User::limit(3)->get();
         
-        Livewire::test(ListUsers::class)
+        Livewire::test(ListUsers::class) 
+        
             ->assertSee($users->pluck('email')->toArray());
     }
 
