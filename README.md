@@ -62,7 +62,7 @@ Acesse a aplicação em http://localhost:8000.
 1. Acesse o painel de administração Filament em:
 
 ```
- http://localhost:8000/admin.
+ http://localhost:8000/v2.
 ```
 
 ## API
