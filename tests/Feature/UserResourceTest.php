@@ -22,9 +22,11 @@ class UserResourceTest extends TestCase
 
     public function test_lista_usuarios(): void
     {   
-        User::truncate();
-        $users = User::factory()->count(3)->create();
-        Livewire::test(ListUsers::class)
+        User::factory()->count(3)->create();
+        $users = User::limit(3)->get();
+        
+        Livewire::test(ListUsers::class) 
+        
             ->assertSee($users->pluck('email')->toArray());
     }
 
