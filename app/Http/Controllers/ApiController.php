@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Helpers\ApiResponse;
 use App\Http\Requests\CreateUserRequest;
 use App\Models\User;
@@ -16,10 +17,10 @@ class ApiController extends Controller
         $user = User::all();
 
         if (!$user) {
-            return ApiResponse::formatJson(404, 'erro');
+            return formatJson(status: 404, message:'erro');
             
         } else {
-            return ApiResponse::formatJson(200, 'Sucesso', $user);
+            return formatJson(status: 200, message: 'Sucesso', data: $user);
         }
     }
 
@@ -28,20 +29,18 @@ class ApiController extends Controller
         $user = User::find($id);
 
         if (!$user) {
-            return ApiResponse::formatJson(404, 'erro');
+            return formatJson(status: 404, message: 'erro');
             
         } else {
-            return ApiResponse::formatJson(200, 'Sucesso', $user);
+            return formatJson(status: 200, message: 'Sucesso', data: $user);
         }
     }
 
     public function store(CreateUserRequest $request)
     {
-        Log::info('Dados recebidos para criação de usuário', $request->all());
-
         $data = $request->validated();
         $user = User::create($data);
 
-        return ApiResponse::formatJson(201, 'Sucesso', $user);
+        return formatJson(status: 201, message: 'Sucesso', data: $user);
     }
 }
