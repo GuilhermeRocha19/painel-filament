@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Helpers\ApiResponse;
 use App\Http\Requests\CreateUserRequest;
 use App\Models\User;
@@ -37,8 +38,6 @@ class ApiController extends Controller
 
     public function store(CreateUserRequest $request)
     {
-        Log::info('Dados recebidos para criação de usuário', $request->all());
-
         $data = $request->validated();
         $user = User::create($data);
 
