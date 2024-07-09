@@ -30,14 +30,15 @@ class UserResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('email')
+                    ->email()
                     ->required()
                     ->unique(ignoreRecord: true),
-                TextInput::make('group'),
+                filament_form_select_groups(),
                 TextInput::make('password')
                     ->password()
                     ->revealable()
                     ->required(fn ($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord)
-                    
+
             ]);
     }
 
